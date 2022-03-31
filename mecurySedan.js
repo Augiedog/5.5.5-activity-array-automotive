@@ -1,5 +1,4 @@
 //this includes the vehicle class as a module
-// const VehicleModule = require("./vehicle.js")
 import {Vehicle} from "/vehicle.js";
 
 class Car extends Vehicle {

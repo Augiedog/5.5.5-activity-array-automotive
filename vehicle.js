@@ -8,22 +8,24 @@ class Vehicle {
         this.speed = 0;
         this.mileage = mileage;
         this.started = false;
-        this.numberOfWheels = 0;
+        this.numWheels = 0;
     }
 
     start() {
         if (this.fuel > 0) {
-            return this.started = true;
             console.log("engine started...!!!");
+            return this.started = true;
+            
         } else {
+            console.log("engine cannot start...Check your fuel");
             return this.started = false;
-            console.log("engine cannot start...");
+            
         }
     }
     accelerate() {
         if (this.started) {
             if (this.fuel > 0) {
-                console.log(this.speed += 1);
+                this.speed += 1;
                 this.fuel = this.fuel - 1;
             } else {
                 console.log("out of fuel.");
@@ -55,7 +57,8 @@ class Vehicle {
         this.started = false;
     }
 
-    drive() {
+    drive(num) {
+        while (num )
         accelerate();
     }
     brake() {
@@ -86,6 +89,4 @@ class Vehicle {
 }
 
 //This exports things you want to use from this "module", more info in readme
-module.exports = {
-    Vehicle
-}
+export {Vehicle};
